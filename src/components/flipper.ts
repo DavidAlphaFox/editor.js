@@ -206,6 +206,16 @@ export default class Flipper {
       return;
     }
 
+    const isShiftKey = event.shiftKey;
+
+    /**
+     * If shift key is pressed, do nothing
+     * Allows to select next/prev lines of text using keyboard
+     */
+    if (isShiftKey === true) {
+      return;
+    }
+
     /**
      * Prevent only used keys default behaviour
      * (allows to navigate by ARROW DOWN, for example)
