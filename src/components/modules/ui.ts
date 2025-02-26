@@ -477,8 +477,6 @@ export default class UI extends Module<UINodes> {
    * @param {KeyboardEvent} event - keyboard event
    */
   private documentKeydown(event: KeyboardEvent): void {
-    console.log('documentKeydown', event);
-
     switch (event.keyCode) {
       case _.keyCodes.ENTER:
         this.enterPressed(event);

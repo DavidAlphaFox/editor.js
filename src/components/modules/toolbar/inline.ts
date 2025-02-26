@@ -102,8 +102,6 @@ export default class InlineToolbar extends Module<InlineToolbarNodes> {
    * Hides Inline Toolbar
    */
   public close(): void {
-    console.warn('close');
-
     if (!this.opened) {
       return;
     }
