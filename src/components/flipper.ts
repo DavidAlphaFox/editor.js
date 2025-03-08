@@ -199,7 +199,7 @@ export default class Flipper {
    *
    * @param event - keydown event
    */
-  private onKeyDown = (event): void => {
+  private onKeyDown = (event: KeyboardEvent): void => {
     const isReady = this.isEventReadyForHandling(event);
 
     if (!isReady) {

@@ -102,7 +102,7 @@ describe('Flipper', () => {
     expect(SomePlugin.pluginInternalKeydownHandler).to.have.not.been.called;
   });
 
-  it.only('should not flip when shift key is pressed', () => {
+  it('should not flip when shift key is pressed', () => {
     cy.createEditor({
       data: {
         blocks: [
@@ -121,13 +121,11 @@ describe('Flipper', () => {
       .get('.ce-paragraph')
       .as('paragraph')
       .selectTextByOffset([0, 10])
-      .wait(200)
-      .type('{shift}{downArrow}');
+      .wait(200);
 
-    // .trigger('keydown', { keyCode: ARROW_DOWN_KEY_CODE,
-    //   shiftKey: true })
-    // .trigger('keydown', { keyCode: ARROW_DOWN_KEY_CODE,
-    //   shiftKey: true });
+    cy.get('@paragraph')
+      .trigger('keydown', { keyCode: ARROW_DOWN_KEY_CODE,
+        shiftKey: true });
 
     // eslint-disable-next-line cypress/require-data-selectors
     cy.get('[data-cy="inline-toolbar"]')
