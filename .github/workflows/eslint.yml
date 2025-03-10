@@ -1,6 +1,6 @@
 name: ESLint CodeX
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   lint:
@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
