@@ -213,7 +213,7 @@ export default class Flipper {
      * Allows to select next/prev lines of text using keyboard
      */
     if (isShiftKey === true) {
-      // return;
+      return;
     }
 
     /**
